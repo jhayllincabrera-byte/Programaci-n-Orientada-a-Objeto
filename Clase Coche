@@ -1,0 +1,33 @@
+Crea una clase llamada **Coche** con atributos marca y velocidad. Agrega una función que aumente la velocidad.
+
+class Coche:
+    # 1. Constructor: Inicializa la marca y la velocidad
+    def __init__(self, marca, velocidad_inicial=0):
+        self.marca = marca
+        self.velocidad = velocidad_inicial
+
+    # 2. Método para aumentar la velocidad
+    def acelerar(self, cantidad):
+        self.velocidad += cantidad
+        print(f"Ruumm!  Aceleraste {cantidad} km/h.")
+
+    # Método extra para ver el estado actual
+    def mostrar_velocidad(self):
+        print(f"El {self.marca} va a {self.velocidad} km/h.")
+
+# --- Bloque Principal (Prueba) ---
+
+# Creamos un coche marca 'Ford' que empieza detenido (0 km/h)
+mi_auto = Coche("Ford", 0)
+
+# Mostramos velocidad inicial
+mi_auto.mostrar_velocidad()
+
+
+# Aumentamos la velocidad en 20
+mi_auto.acelerar(20)
+mi_auto.mostrar_velocidad()
+
+# Aumentamos la velocidad en 60 más
+mi_auto.acelerar(60)
+mi_auto.mostrar_velocidad()
