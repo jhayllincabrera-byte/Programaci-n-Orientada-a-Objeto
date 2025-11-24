@@ -1,0 +1,26 @@
+Crea una clase llamada **Rectangulo** que reciba base y altura. Implementa una función que calcule el área.
+
+class Rectangulo:
+    # 1. Constructor: Recibe base y altura y las guarda en el objeto
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+
+    # 2. Método para calcular el área
+    # Devuelve el resultado de multiplicar la base por la altura
+    def calcular_area(self):
+        area = self.base * self.altura
+        return area
+
+# --- Bloque Principal (Prueba de la clase) ---
+
+# Creamos un rectángulo con base 10 y altura 5
+mi_rectangulo = Rectangulo(15, 5)
+
+# Llamamos a la función y guardamos el resultado
+resultado = mi_rectangulo.calcular_area()
+
+# Mostramos el resultado
+print(f"Base: {mi_rectangulo.base}")
+print(f"Altura: {mi_rectangulo.altura}")
+print(f"El área del rectángulo es: {resultado}")
