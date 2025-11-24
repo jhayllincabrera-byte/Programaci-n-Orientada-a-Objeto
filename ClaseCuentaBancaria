@@ -1,0 +1,46 @@
+Crea una clase llamada **CuentaBancaria** con atributos titular y balance. Implementa funciones para depositar y retirar.
+
+class CuentaBancaria:
+    # 1. Constructor: Crea la cuenta con un titular y un saldo inicial
+    def __init__(self, titular, balance=0):
+        self.titular = titular
+        self.balance = balance
+
+    # 2. Método para depositar (sumar dinero)
+    def depositar(self, cantidad):
+        if cantidad > 0:
+            self.balance += cantidad
+            print(f"✅ Se han depositado ${cantidad}. Nuevo saldo: ${self.balance}")
+        else:
+            print("❌ La cantidad a depositar debe ser positiva.")
+
+    # 3. Método para retirar (restar dinero con validación)
+    def retirar(self, cantidad):
+        # Verificamos si hay fondos suficientes
+        if cantidad > self.balance:
+            print(f"❌ Fondos insuficientes. Intentaste retirar ${cantidad}, pero solo tienes ${self.balance}.")
+        else:
+            self.balance -= cantidad
+            print(f"💸 Retiraste ${cantidad}. Saldo restante: ${self.balance}")
+            
+    # Método extra para consultar saldo
+    def mostrar_info(self):
+        print(f"--- Cuenta de {self.titular} | Saldo: ${self.balance} ---")
+
+# --- Bloque Principal (Prueba) ---
+
+# Creamos la cuenta de "Carlos" con 100 dólares
+mi_cuenta = CuentaBancaria("Jhayllin Cabrera", 100.0)
+
+# Intente retirar más de lo que tenemos (Validación)
+
+mi_cuenta.retirar(150)
+
+# Deposite dinero
+mi_cuenta.depositar(500)
+
+# Ahora sí puedo retirar
+mi_cuenta.retirar(200)
+
+# Estado final
+mi_cuenta.mostrar_info()
