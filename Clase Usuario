@@ -1,0 +1,24 @@
+class Usuario:
+    # 1. El Constructor (__init__)
+    # Se ejecuta automáticamente al crear un objeto. Inicializa los atributos.
+    def __init__(self, nombre, edad):
+        self.nombre = nombre  # Atributo público nombre
+        self.edad = edad      # Atributo público edad
+
+    # 2. Método (Función) para mostrar datos
+    def mostrar_datos(self):
+        print("--- Datos del Usuario ---")
+        print(f"Nombre: {self.nombre}")
+        print(f"Edad: {self.edad} años")
+
+# --- Bloque Principal (Uso de la clase) ---
+
+# Instanciamos (creamos) un objeto de la clase Usuario
+usuario1 = Usuario("Ana Pérez", 28)
+
+# Llamamos al método para ver la información
+usuario1.mostrar_datos()
+
+# Creamos otro usuario diferente
+usuario2 = Usuario("Roberto Gómez", 35)
+usuario2.mostrar_datos()
