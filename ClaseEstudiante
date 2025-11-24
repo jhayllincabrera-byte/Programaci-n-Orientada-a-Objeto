@@ -1,0 +1,35 @@
+Crea una clase llamada **Estudiante** con nombre y calificaciones. Implementa una función que calcule el promedio.
+
+class Estudiante:
+    
+    def __init__(self, nombre, calificaciones):
+        self.nombre = nombre
+        self.calificaciones = calificaciones  
+
+
+    def calcular_promedio(self):
+       
+        cantidad_notas = len(self.calificaciones)
+        
+        if cantidad_notas == 0:
+            return 0
+        
+       
+        suma_total = sum(self.calificaciones)
+        promedio = suma_total / cantidad_notas
+        return promedio
+
+    
+    def mostrar_boleta(self):
+        prom = self.calcular_promedio()
+        estado = "Aprobado" if prom >= 60 else "Reprobado"
+        print(f"--- Boleta de {self.nombre} ---")
+        print(f"Notas: {self.calificaciones}")
+        print(f"Promedio Final: {prom:.2f}")
+        print(f"Estado: {estado}")
+
+
+print("\n" + "="*30 + "\n")
+
+alumno2 = Estudiante("Maria Lopez", [90, 80, 75])
+alumno2.mostrar_boleta()
